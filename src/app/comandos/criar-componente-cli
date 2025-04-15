@@ -1,0 +1,12 @@
+Abra o terminal.
+
+digite:
+
+ng generate component <nome do compoente>
+
+ex: 
+
+ng generate component minhapagina
+
+o node vai criar uma pasta com os arquivos do componente dentro da pasta app 
+com o nome do componente.
