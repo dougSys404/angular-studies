@@ -2,7 +2,9 @@
     <div class="form-box">
         <!--ngForm faz parte do forms module do angular, angulariza o formulario / #frm e um referencia local
         para o formulario-->
-        <form #frm="ngForm">
+        <!--(ngSubmit) e um event biding que escuta o evento de envio, tornando desnecessário chamar
+        a função no botão, isso permite que o submit seja feito pelo click ou pela tecla enter-->
+        <form #frm="ngForm" (ngSubmit)="calcularResultado()">
             <h2>Calculadora</h2>
             <label for="numero1">Número 1</label>
             <!--[(ngModel)] amarra (bind) o valor do campo com a variável numero 1 (two way data bind)-->
@@ -14,7 +16,7 @@
 
             <!--(click) e a ação que e aguardada pelo usuario (event listener) e calcularResultado 
             e a chamada da função (one way data bind)-->
-            <button type="button" (click)="calcularResultado()">Somar</button>
+            <button type="submit">Somar</button>
         </form>
 
         <div class="result-display">
