@@ -18,11 +18,25 @@
             e a chamada da função (one way data bind)-->
             <button type="submit">Somar</button>
         </form>
-
-        <div class="result-display">
-            <!--{{ resultado }} e a forma de se referenciar/exibir uma variável definida no componente-->
-            <p>Resultado: <span id="result">{{ resultado }}</span></p>
+        <!--O *ngIf="resultado" nessa linha faz com que o <div> só seja exibido no 
+            HTML se a variável resultado tiver algum valor (ou seja, for "truthy")
+            OBS: *ngIf não tem else-->
+        <div class="result-display" *ngIf="resultado">
+            <p>Resultado da soma: </p>
         </div>
+        <!--resultado != 0 && != null && != undefined && !== false-->
+        @if (resultado) {
+            
+            <div class="result-display">
+                <!--{{ resultado }} e a forma de se referenciar/exibir uma variável definida no componente-->
+                <p>Resultado: <span id="result">{{ resultado }}</span></p>
+            </div>
+        } @else {
+            <div class="result-display">
+                <p>O resultado da soma aparecerá aqui.</p>
+            </div>
+        }
+
 
     </div>
 </div>
